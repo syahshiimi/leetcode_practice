@@ -53,16 +53,23 @@ function getCreateHashmap(s, t) {
   // }
 
   for (let s_entry of s_hashmap.entries()) {
-    const c1nextITer = s1entry.next().value;
-    const c2nextITer = t1entry.next().value;
-    // console.log(c1nextITer[1], c2nextITer[1], s_entry[1], c2nextITer[1]);
-    console.log(t1value.next().value);
-
-    if (c1nextITer[1] === s_entry[1] && c2nextITer[1] != t1value.next().value) {
-      return false;
-    } else {
-      return console.log(true);
-    }
+    const c1nextEntry = s1entry.next().value;
+    const c2nextEntry = t1entry.next().value;
+    const c1nextValue = s1value.next().value;
+    const c2nextValue = t1value.next().value;
+    console.log(
+      // c1nextITer[1],
+      // c2nextITer[1],
+      // s_entry[1],
+      // c2nextITer[1],
+      // t1value.next().value
+      c1nextEntry,
+      c2nextEntry,
+      c1nextValue,
+      c2nextValue
+    );
+    
+    if (c1nextEntry[1])
   }
 }
 
