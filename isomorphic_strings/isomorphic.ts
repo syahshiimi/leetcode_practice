@@ -23,12 +23,18 @@ function getCreateHashmap(s, t) {
 
   console.log("hashes are mapped...");
 
-  for (let s_key of s_hashmap.keys()) {
-    let combiKey = s_hashmap.get(s_key) + t_hashmap.get(s_key);
-    if (s_hashmap.get(s_key) == t_hashmap.get(s_key)) {
-      return false;
-    } else {
-      return true;
+  for (let e = 0; e <= s.length - 1; e++) {
+    let c1 = s_hashmap.get(e);
+    let c2 = t_hashmap.get(e);
+
+    // console.log(c1, c2);
+
+    // g => n cannot be mapped if
+    // g exists in the same c1 map
+    // and already not mapped to the same value of where it is meant to map
+    //
+    if (c1 != t_hashmap.get(e)) {
+      console.log(c1, t_hashmap.get(e));
     }
   }
 }
