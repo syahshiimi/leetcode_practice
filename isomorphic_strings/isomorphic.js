@@ -11,7 +11,6 @@ function getCreateHashmap(s, t) {
     mapTS.set(t[i], s[i]);
   }
 
-
   const mapST_entries = mapST.entries()
   const mapTS_entries = mapTS.entries()
 
@@ -21,15 +20,13 @@ function getCreateHashmap(s, t) {
   }
 
   for (let e = 0; e <= s.length - 1; e++) {
-    // check if they are the SAME strings
-    if (s[e] === t[e]) {
-      console.log('is isomorphic')
-      return false
-    } else if (!(mapST.has(t[e])) || (!(mapTS.has(s[e])))) {
-      console.log('is isommorphic')
-      return true
-    }
+    const charS = s[e];
+    const charT = t[e];
+
+    if (mapST.size != mapTS.size) return false;
+    if (mapST.get(charS) != charT) return false
   }
+  return true;
 }
 
 
